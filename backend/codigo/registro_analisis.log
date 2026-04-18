@@ -1,0 +1,5 @@
+{"timestamp": "2026-04-15 19:02:31", "input": "Estimados alumnos, les recordamos que la biblioteca central cerrará por labores de mantenimiento el próximo viernes a partir de las 14:00h. Disculpen las molestias. Atentamente, el Rectorado.", "scores_ia": {"urgency": 4, "coercion": 0, "authority": 1}, "decision_final": "SEGURO"}
+{"timestamp": "2026-04-15 19:11:33", "input": "jsdhbfsdjhfbsdjfbsdjfhsdb", "scores_ia": {"urgency": 0, "coercion": 0, "authority": 0}, "decision_final": "ERROR_FORMATO_IA", "error": "La IA no devolvió un JSON válido"}
+{"timestamp": "2026-04-15 19:13:13", "input": "", "scores_ia": {"urgency": 0, "coercion": 0, "authority": 0}, "decision_final": "ERROR_FORMATO_IA", "error": "La IA no devolvió un JSON válido"}
+{"timestamp": "2026-04-15 19:14:29", "input": "", "scores_ia": {"urgency": 0, "coercion": 0, "authority": 0}, "decision_final": "ERROR_FORMATO", "error": "La IA no devolvió un JSON"}
+{"timestamp": "2026-04-15 19:14:43", "input": "gfdgdfgdfgdfgdfgdf", "scores_ia": {"urgency": 0, "coercion": 0, "authority": 0}, "decision_final": "ERROR_FORMATO", "error": "La IA no devolvió un JSON"}
