@@ -4,17 +4,25 @@
   "version": "1.0",
   "description": "Protección TEA contra Ingeniería Social",
   "permissions": ["storage", "activeTab"],
-  "host_permissions": ["https://*/*"],
+  "host_permissions": [
+    "http://localhost:8000/*"
+  ],
   "action": {
     "default_popup": "popup.html"
   },
   "icons": {
     "128": "icon.png"
   },
-  "content_scripts": [
+"content_scripts": [
     {
-      "matches": ["https://*/*"],
-      "js": ["content.js"]
+        "matches": ["<all_urls>"],
+        "js": [
+            "scripts/config.js",
+            "scripts/privacy.js",
+            "scripts/ui.js",
+            "scripts/main.js"
+        ],
+        "run_at": "document_idle"
     }
-  ]
+]
 }
