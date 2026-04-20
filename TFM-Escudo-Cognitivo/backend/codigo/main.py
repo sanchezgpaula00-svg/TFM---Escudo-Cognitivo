@@ -14,6 +14,13 @@ prompt_sistema = (
         "3. authority: Uso de un cargo o entidad PARA FORZAR UNA ACCIÓN INUSUAL O SALTARSE NORMAS. "
         "IMPORTANTE: Si el mensaje es un aviso puramente informativo de una institución real (ej. Universidad, Banco) y no pide acciones urgentes o inusuales, 'authority' DEBE SER 0. "
         "Responde ÚNICAMENTE en JSON con las claves: urgency, coercion, authority."
+        
+        "REGLAS DE EXCEPCIÓN CRÍTICAS (APRENDIZAJE CERO):"
+        "1. Falsa Autoridad vs Autoridad Legítima: Que un texto mencione (Agencia Tributaria) o (Universidad) genera puntos de Autoridad, pero NO genera Coacción a menos que se exija un pago inmediato o haya una amenaza de bloqueo. Los avisos puramente informativos son seguros."
+        "2. Ingeniería Social por Avaricia: Las ofertas de regalos (ej. iPhones), premios inesperados o sorteos condicionados a un tiempo límite (solo 10 minutos), deben ser puntuados ALTO en Urgencia y ALTO en Coacción Psicológica (manipulación por escasez), aunque no haya violencia explícita."
+        "3. Precisión de Coacción: Si el mensaje solo informa de un plazo normal (ej. matrícula hasta el 30 de junio) la Urgencia es BAJA (1-2) y la Coacción es NULA (0)."
+
+        
     )
 
 app = FastAPI(title="Backend Seguridad Inclusiva")
@@ -66,6 +73,11 @@ async def analyze_threat(content: EmailContent):
         
         # Obtenemos el JSON de la IA y lo convertimos a un diccionario de Python
         ia_result_str = response['message']['content']
+        if "{" in ia_result_str and "}" in ia_result_str:
+            inicio = ia_result_str.find("{")
+            fin = ia_result_str.rfind("}") + 1
+            ia_result_str = ia_result_str[inicio:fin]
+        
         ia_data = json.loads(ia_result_str)
         
         # LÓGICA DE DETECCIÓN (Tu aportación de valor al TFM)
@@ -77,10 +89,10 @@ async def analyze_threat(content: EmailContent):
         nivel_alerta = "SEGURO"
         color = "VERDE"
         
-        if score_total >= 18 or ia_data.get('coercion', 0) >= 8:
+        if score_total >= 16 or ia_data.get('coercion', 0) >= 8:
             nivel_alerta = "PELIGRO CRÍTICO"
             color = "ROJO"
-        elif score_total >= 10 or ia_data.get('urgency', 0) >= 7:
+        elif score_total >= 10 or ia_data.get('urgency', 0) >= 8:
             nivel_alerta = "SOSPECHOSO"
             color = "AMARILLO"
             

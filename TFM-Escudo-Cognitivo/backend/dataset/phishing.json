@@ -1,0 +1,42 @@
+[
+    {
+        "texto": "⚠️ SEGURIDAD BANCO: Se ha detectado un acceso desde una nueva IP. Si no reconoce esta actividad, bloquee su tarjeta inmediatamente aquí: http://bit.ly/pishing-test",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Estimado alumno, le recordamos que el plazo de matrícula para el próximo curso finaliza el 30 de junio. Un saludo, Secretaría.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "¡GANADOR! Has sido seleccionado para recibir un iPhone 15. Solo tienes 10 minutos para reclamar tu premio. Clica aquí.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "URGENTE: Su paquete de Amazon no ha podido ser entregado por falta de pago de aduanas (2.99€). Pague ahora para evitar la devolución.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Hola Víctor, ¿podrías enviarme el borrador del TFM cuando lo tengas listo? No hay prisa. Gracias.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "NOTIFICACIÓN JUDICIAL: Tiene una citación pendiente de comparecencia. Descargue el documento adjunto para evitar una orden de arresto.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Netflix: Su suscripción ha caducado. Actualice su método de pago para seguir disfrutando del servicio.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "La Agencia Tributaria informa: Se ha ordenado el pago de su devolución del IRPF 2025. El importe se recibirá en 48h.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "¡ALERTA! Alguien ha intentado cambiar tu contraseña de Instagram. Si no has sido tú, pulsa este botón.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "ACTUALIZACIÓN DE SEGURIDAD: Su cuenta será suspendida en 1 hora por incumplimiento de términos. Verifique su identidad para evitar la eliminación de datos.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    }
+]
