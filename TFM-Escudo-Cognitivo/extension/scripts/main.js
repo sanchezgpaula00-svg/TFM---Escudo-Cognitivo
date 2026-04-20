@@ -29,4 +29,23 @@ async function escanearPagina() {
 }
 
 // Lanzamos el proceso
-setTimeout(escanearPagina, CONFIG.TIEMPO_ESPERA_CARGA);
+const observer = new MutationObserver((mutations, obs) => {
+    const bodyText = document.body.innerText.trim();
+    // Si ya hay suficiente texto para analizar, disparamos y desconectamos el observador
+    if (bodyText.length > 100) { 
+        escanearPagina();
+        obs.disconnect(); // Dejamos de observar para ahorrar recursos
+    }
+});
+
+// Configuramos el observador para que vigile cambios en el cuerpo de la web
+observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true
+});
+
+// Por si acaso la página ya estaba cargada de antes
+if (document.body && document.body.innerText.trim().length > 100) {
+    escanearPagina();
+    observer.disconnect();
+}
