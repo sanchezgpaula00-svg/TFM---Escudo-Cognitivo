@@ -28,7 +28,7 @@ app = FastAPI(title="Backend Seguridad Inclusiva")
 # Configuración CORS para permitir que la extensión se conecte
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # En producción se restringe, pero para la PoC en local lo dejamos abierto
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -80,7 +80,7 @@ async def analyze_threat(content: EmailContent):
         
         ia_data = json.loads(ia_result_str)
         
-        # LÓGICA DE DETECCIÓN (Tu aportación de valor al TFM)
+        # LÓGICA DE DETECCIÓN
         if ia_data.get('urgency', 0) <= 2 and ia_data.get('coercion', 0) <= 2:
             score_total = 0 # Lo forzamos a seguro
         else:

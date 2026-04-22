@@ -28,13 +28,12 @@ async function escanearPagina() {
     }
 }
 
-// Lanzamos el proceso
 const observer = new MutationObserver((mutations, obs) => {
     const bodyText = document.body.innerText.trim();
     // Si ya hay suficiente texto para analizar, disparamos y desconectamos el observador
     if (bodyText.length > 100) { 
         escanearPagina();
-        obs.disconnect(); // Dejamos de observar para ahorrar recursos
+        obs.disconnect();
     }
 });
 
@@ -44,7 +43,6 @@ observer.observe(document.documentElement, {
     subtree: true
 });
 
-// Por si acaso la página ya estaba cargada de antes
 if (document.body && document.body.innerText.trim().length > 100) {
     escanearPagina();
     observer.disconnect();
