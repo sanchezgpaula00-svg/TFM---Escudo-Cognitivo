@@ -1,42 +1,202 @@
 [
     {
-        "texto": "⚠️ SEGURIDAD BANCO: Se ha detectado un acceso desde una nueva IP. Si no reconoce esta actividad, bloquee su tarjeta inmediatamente aquí: http://bit.ly/pishing-test",
+        "texto": "He hackeado tu ordenador y tengo un vídeo tuyo viendo contenido para adultos. Si no transfieres 500€ en Bitcoin a esta cartera en 48 horas, enviaré el vídeo a todos tus contactos.",
         "etiqueta_real": "PELIGRO CRÍTICO"
     },
     {
-        "texto": "Estimado alumno, le recordamos que el plazo de matrícula para el próximo curso finaliza el 30 de junio. Un saludo, Secretaría.",
+        "texto": "Hola Víctor, te confirmo que la cena de antiguos alumnos será el sábado a las 21:00 en el restaurante del centro. Por favor, confirma asistencia.",
         "etiqueta_real": "SEGURO"
     },
     {
-        "texto": "¡GANADOR! Has sido seleccionado para recibir un iPhone 15. Solo tienes 10 minutos para reclamar tu premio. Clica aquí.",
+        "texto": "Tu almacenamiento en iCloud está casi lleno (4.9 GB de 5 GB). Actualiza a iCloud+ hoy para seguir guardando fotos y recibiendo correos.",
         "etiqueta_real": "SOSPECHOSO"
     },
     {
-        "texto": "URGENTE: Su paquete de Amazon no ha podido ser entregado por falta de pago de aduanas (2.99€). Pague ahora para evitar la devolución.",
+        "texto": "BBVA: Su cuenta ha sido bloqueada preventivamente por un acceso sospechoso desde Rusia. Inicie sesión inmediatamente aquí para verificar su identidad o perderá el acceso.",
         "etiqueta_real": "PELIGRO CRÍTICO"
     },
     {
-        "texto": "Hola Víctor, ¿podrías enviarme el borrador del TFM cuando lo tengas listo? No hay prisa. Gracias.",
+        "texto": "Sanitas: Le recordamos que mañana a las 17:00 tiene cita con el especialista en Dermatología. Si no puede asistir, rogamos la anule con antelación.",
         "etiqueta_real": "SEGURO"
     },
     {
-        "texto": "NOTIFICACIÓN JUDICIAL: Tiene una citación pendiente de comparecencia. Descargue el documento adjunto para evitar una orden de arresto.",
+        "texto": "¡ÚLTIMA OPORTUNIDAD! Eres el visitante 1.000.000 y has ganado una tarjeta regalo de Mercadona de 500€. Haz clic aquí y rellena tus datos para reclamarla.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "Recursos Humanos: Estimado empleado, adjuntamos la nueva política de teletrabajo que entrará en vigor el mes que viene. Por favor, revísela.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "Agencia Tributaria: Notificación de providencia de embargo por deudas no resueltas. Descargue el expediente adjunto (embargo_cuentas.zip) para presentar alegaciones en 24h.",
         "etiqueta_real": "PELIGRO CRÍTICO"
     },
     {
-        "texto": "Netflix: Su suscripción ha caducado. Actualice su método de pago para seguir disfrutando del servicio.",
-        "etiqueta_real": "SOSPECHOSO"
-    },
-    {
-        "texto": "La Agencia Tributaria informa: Se ha ordenado el pago de su devolución del IRPF 2025. El importe se recibirá en 48h.",
+        "texto": "Factura Electrónica de Endesa: Tu factura de enero por importe de 65,30€ ya está pagada y disponible en tu área de cliente.",
         "etiqueta_real": "SEGURO"
     },
     {
-        "texto": "¡ALERTA! Alguien ha intentado cambiar tu contraseña de Instagram. Si no has sido tú, pulsa este botón.",
+        "texto": "Se ha añadido una nueva dirección de envío a tu cuenta de Amazon. Si no has sido tú, contacta con nosotros urgentemente para cancelar este cargo.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Hola equipo, he dejado unos cruasanes en la sala de descanso por mi cumpleaños. ¡Daos prisa que vuelan!",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "Tu paquete de CorreosExpress no cabe en el buzón. Pincha en este enlace para reprogramar la entrega. Tienes 12 horas antes de que sea devuelto a China.",
         "etiqueta_real": "SOSPECHOSO"
     },
     {
-        "texto": "ACTUALIZACIÓN DE SEGURIDAD: Su cuenta será suspendida en 1 hora por incumplimiento de términos. Verifique su identidad para evitar la eliminación de datos.",
+        "texto": "Alerta de Seguridad de Google: Se ha impedido un intento de inicio de sesión con su contraseña. Le recomendamos cambiar sus credenciales de inmediato.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "Soporte Técnico de Microsoft: Hemos detectado un troyano en su sistema operativo. Llame urgentemente a este número gratuito para que un técnico tome control de su PC y lo limpie.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Ticketmaster: Tus entradas para el concierto de Coldplay han sido emitidas. Puedes descargarlas en formato PDF en el enlace adjunto. ¡Disfruta del evento!",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "Aviso de la DGT: Su vehículo con matrícula 1234-BCD tiene una multa pendiente por exceso de velocidad. Pague ahora con un 50% de descuento pulsando aquí.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "LinkedIn: Tu perfil ha aparecido en 15 búsquedas esta semana. Mejora a Premium para ver quién está mirando tu currículum.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "Banco Santander informa: A partir del 1 de mayo, actualizaremos nuestras condiciones legales. No es necesario que realice ninguna acción.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "Ministerio del Interior: Tiene una orden de arresto internacional emitida por la Europol. Abra el documento PDF para conocer los cargos y pagar la fianza.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Renfe: Tu billete AVE Madrid-Barcelona para el día 15 ha sido confirmado. Localizador: XYZ789. Buen viaje.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "¡ATENCIÓN! Tu antivirus ha caducado. Tu ordenador está desprotegido frente a 5 amenazas detectadas. Renueva tu licencia por solo 9,99€ antes de perder todos tus archivos.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Gimnasio McFit: Te recordamos que el próximo martes las instalaciones cerrarán a las 20:00 por mantenimiento de las duchas.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "Hemos recibido tu solicitud para eliminar tu cuenta de Facebook. Si no has sido tú, haz clic en 'Cancelar eliminación' en las próximas 2 horas.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "PayPal: Su pago de 899€ a 'Electrónica Martínez' ha sido procesado. Si usted no autorizó esta compra, llame a nuestro centro de resolución fraudulenta de inmediato.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "InfoJobs: Hay 3 nuevas ofertas de empleo de 'Ingeniero de Software' en Madrid que encajan con tu perfil. Inscríbete ahora.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "¡Hola! Soy María, la chica que conociste anoche. Te dejo aquí un enlace a mis fotos privadas, pero no se lo pases a nadie eh 😉 http://fotos-privadas-maria.com",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "Administración de Loterías: Ha sido premiado con la devolución del importe jugado (20€). El dinero ha sido ingresado en su saldo virtual.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "Aviso Urgente RRHH: Debido a la situación económica, procederemos a un ERTE. Compruebe en este enlace si su nombre está en la lista de despidos de mañana.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Tu suscripción a Spotify Premium será renovada mañana. Se te cobrarán 10,99€ en tu método de pago habitual.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "Aviso de Seguridad de WhatsApp: Tu cuenta está siendo registrada en un nuevo dispositivo. No compartas el código SMS con nadie.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "Director Financiero: Hola, estoy reunido y no puedo hablar. Necesito que hagas una transferencia de 15.000€ al proveedor 'TechCorp' antes de las 14:00 para no perder el contrato. Trátalo con máxima discreción.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Movistar: Tienes una factura devuelta de 45€. Si no regularizas el pago hoy, suspenderemos tu línea de teléfono e internet mañana a primera hora.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Recordatorio: El webinar sobre 'Ciberseguridad en la Nube' comienza en 15 minutos. Únete a través del enlace de Teams.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "El Corte Inglés: Tu pedido 4829X está listo para recoger en tienda. Presenta tu DNI en el mostrador de Click&Collect.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "¡Gana dinero respondiendo encuestas! Dedica solo 5 minutos al día y gana hasta 500€ al mes. Únete a nuestro panel de expertos hoy.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "Juzgado de Instrucción nº4: Le requerimos para prestar declaración como investigado. Si no se presenta, se ordenará su busca y captura inmediata. Lea el sumario aquí.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Hola, soy de la empresa de mensajería. No encuentro tu dirección y estoy en la calle. ¿Me puedes confirmar tu piso y puerta por aquí?",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "Ministerio de Sanidad: Su certificado digital ha expirado. Renueve sus credenciales para poder seguir accediendo a su historial médico y recetas.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "Netflix: Hemos ajustado nuestros precios. A partir del próximo mes, tu plan Estándar costará 13,99€. Puedes cambiar tu plan en cualquier momento.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "ING Direct: Por motivos de la nueva ley PSD2, su tarjeta de coordenadas ha quedado obsoleta. Rellene este formulario con los números de su tarjeta para activar la nueva validación móvil.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Vueling: Se ha abierto el check-in online para tu vuelo a París. Descarga tus tarjetas de embarque para evitar colas en el aeropuerto.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "Invierte en la nueva criptomoneda respaldada por Elon Musk. Rentabilidad garantizada del 300% en una semana. Solo quedan 50 plazas para el presale.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "Policía Nacional: Su IP ha sido registrada visitando sitios de terrorismo. Proceda a pagar la sanción administrativa de 300€ para evitar cargos penales.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Iberdrola: Te enviamos adjunta la factura de este mes. El importe es de -15,40€ (tienes saldo a favor que se descontará el mes que viene).",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "Señor/a, soy un abogado en Londres. Mi cliente fallecido tiene su mismo apellido y le ha dejado una herencia de 4 millones de dólares. Contácteme para los trámites.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "Aviso del sistema informático: Se ha superado la cuota de su buzón. No podrá enviar ni recibir más correos hasta que libere espacio o amplíe la cuota.",
+        "etiqueta_real": "SOSPECHOSO"
+    },
+    {
+        "texto": "Airbnb: El anfitrión ha aceptado tu reserva para el apartamento en Roma. Se ha cargado el 50% del total en tu tarjeta.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "URGENTE: Un dispositivo no reconocido está intentando descargar su copia de seguridad de WhatsApp. Presione 'Bloquear' y valide su número para detenerlo.",
+        "etiqueta_real": "PELIGRO CRÍTICO"
+    },
+    {
+        "texto": "Hola, te escribo del colegio de tu hijo. Ha habido un pequeño accidente en el recreo, nada grave, pero necesitamos que vengas a recogerlo.",
+        "etiqueta_real": "SEGURO"
+    },
+    {
+        "texto": "Tu cuenta de Wallapop ha sido restringida por comportamiento inusual. Para seguir vendiendo, verifica tu identidad subiendo una foto de tu DNI por ambas caras.",
         "etiqueta_real": "PELIGRO CRÍTICO"
     }
 ]

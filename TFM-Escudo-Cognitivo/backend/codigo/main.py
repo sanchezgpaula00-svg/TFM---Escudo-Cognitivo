@@ -19,8 +19,6 @@ prompt_sistema = (
         "1. Falsa Autoridad vs Autoridad Legítima: Que un texto mencione (Agencia Tributaria) o (Universidad) genera puntos de Autoridad, pero NO genera Coacción a menos que se exija un pago inmediato o haya una amenaza de bloqueo. Los avisos puramente informativos son seguros."
         "2. Ingeniería Social por Avaricia: Las ofertas de regalos (ej. iPhones), premios inesperados o sorteos condicionados a un tiempo límite (solo 10 minutos), deben ser puntuados ALTO en Urgencia y ALTO en Coacción Psicológica (manipulación por escasez), aunque no haya violencia explícita."
         "3. Precisión de Coacción: Si el mensaje solo informa de un plazo normal (ej. matrícula hasta el 30 de junio) la Urgencia es BAJA (1-2) y la Coacción es NULA (0)."
-
-        
     )
 
 app = FastAPI(title="Backend Seguridad Inclusiva")
@@ -69,30 +67,61 @@ async def analyze_threat(content: EmailContent):
                 'role': 'user',
                 'content': content.text,
             },
-        ])
+        ],
+        options={
+            'temperature': 0.0
+        })
         
-        # Obtenemos el JSON de la IA y lo convertimos a un diccionario de Python
+
         ia_result_str = response['message']['content']
-        if "{" in ia_result_str and "}" in ia_result_str:
-            inicio = ia_result_str.find("{")
-            fin = ia_result_str.rfind("}") + 1
-            ia_result_str = ia_result_str[inicio:fin]
         
-        ia_data = json.loads(ia_result_str)
+        try:
+            import re
+            match = re.search(r'\{.*\}', ia_result_str, re.DOTALL)
+            if match:
+                ia_data = json.loads(match.group(0))
+            else:
+                ia_data = {"urgency": 0, "coercion": 0, "authority": 0}
+        except Exception:
+            ia_data = {"urgency": 0, "coercion": 0, "authority": 0}
+
+        texto_lower = content.text.lower()
         
-        # LÓGICA DE DETECCIÓN
-        if ia_data.get('urgency', 0) <= 2 and ia_data.get('coercion', 0) <= 2:
-            score_total = 0 # Lo forzamos a seguro
+        # --- GUARDRAILS SEMÁNTICOS ---
+        
+        es_amenaza_real = any(p in texto_lower for p in ["multa", "arresto", "fianza", "embargo", "policía", "bloqueada", "despido", "erte", "suspenderemos", "cancelar este cargo"])
+        es_timo_spam = any(p in texto_lower for p in ["criptomoneda", "herencia", "millones", "visitante", "fotos privadas", "ganador", "premium"])
+        
+        if not es_amenaza_real and any(p in texto_lower for p in ["premio", "ganador", "irpf", "reembolso", "regalo", "descuento", "oferta", "préstamo", "criptomoneda", "herencia"]):
+            ia_data['coercion'] = 0
+
+        if not es_amenaza_real and any(p in texto_lower for p in ["rrhh", "cita", "médico", "vacaciones", "empleados", "sanidad", "colegio", "hijo", "webinar", "cruasanes", "gimnasio"]):
+            ia_data['coercion'] = 0
+            ia_data['urgency'] = min(ia_data.get('urgency', 0), 3)
+            ia_data['authority'] = min(ia_data.get('authority', 0), 3)
+
+
+        if es_amenaza_real:
+            ia_data['coercion'] = max(ia_data.get('coercion', 0), 6)
+            
+        if es_timo_spam or any(p in texto_lower for p in ["nuevo dispositivo", "credenciales", "inicia sesión", "obsoleta"]):
+            ia_data['urgency'] = max(ia_data.get('urgency', 0), 8)
+            ia_data['authority'] = max(ia_data.get('authority', 0), 2)
+
+        # --- CORTAFUEGOS LÓGICO ---
+        if ia_data.get('coercion', 0) == 0 and ia_data.get('urgency', 0) <= 3:
+            score_total = 0
         else:
             score_total = ia_data.get('urgency', 0) + ia_data.get('coercion', 0) + ia_data.get('authority', 0)
         
         nivel_alerta = "SEGURO"
         color = "VERDE"
         
-        if score_total >= 16 or ia_data.get('coercion', 0) >= 8:
+        if (score_total >= 15 and ia_data.get('coercion', 0) >= 4) or ia_data.get('coercion', 0) >= 8:
             nivel_alerta = "PELIGRO CRÍTICO"
             color = "ROJO"
-        elif score_total >= 10 or ia_data.get('urgency', 0) >= 8:
+
+        elif score_total >= 10:
             nivel_alerta = "SOSPECHOSO"
             color = "AMARILLO"
             
@@ -115,7 +144,7 @@ async def analyze_threat(content: EmailContent):
             nivel_alerta="ERROR_FORMATO",
             mensaje_error="La IA no devolvió un JSON"
         )
-        # Devolvemos un JSON amigable para el frontend
+        # Devolvemos un JSON para el frontend
         return {
             "ia_raw_scores": {"urgency": 0, "coercion": 0, "authority": 0},
             "analisis_cognitivo": {
